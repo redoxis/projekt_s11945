@@ -5,20 +5,20 @@ public class Participant
 	private String firstName;
 	private String lastName;
 	private String email;
-	private String email1;
-	private String employer;
+	private String emailAuthenticate;
+	private String superior;
 	private String info;
 	private String text;
 	
 	public static Participant [] list = new Participant[5];
 	
 	  
-	public static int counter = 0;
+	public static int participant = 0;
 	
 	public Participant() 
 	{
-		Participant.list[counter] = this;
-		Participant.counter++;
+		Participant.list[participant] = this;
+		Participant.participant++;
 	}
 	
 	
@@ -53,24 +53,24 @@ public class Participant
 		this.email = email;
 	}
 
-	public String getEmail1() 
+	public String getEmailAuthenticate() 
 	{
-		return email1;
+		return emailAuthenticate;
 	}
 
-	public void setEmail1(String email1) 
+	public void setEmail1(String emailAuthenticate) 
 	{
-		this.email1 = email1;
+		this.emailAuthenticate = emailAuthenticate;
 	}
 
-	public String getEmployer() 
+	public String getSuperior() 
 	{
-		return employer;
+		return superior;
 	}
 
-	public void setEmployer(String employer) 
+	public void setSuperior(String superior) 
 	{
-		this.employer = employer;
+		this.superior = superior;
 	}
 
 	public String getInfo() 

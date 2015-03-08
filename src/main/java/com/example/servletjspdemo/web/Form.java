@@ -15,77 +15,94 @@ import com.example.servletjspdemo.domain.Participant;
 
 @WebServlet("/Form")
 public class Form extends HttpServlet 
-{
-	private static final long serialVersionUID = 1L;
-  
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		
-		HttpSession session = request.getSession();
-		
-		String firstName = request.getParameter("firstName");
-		String lastName = request.getParameter("lastName");
-		
-		//session.setAttribute("firstName", firstName);
-		session.setAttribute("lastName", lastName);
-		
-		int limit = 5;
-				
-		boolean comparison;
-		
-		comparison = (firstName == session.getAttribute("firstName"));
+		private static final long serialVersionUID = 1L;
 		
 		
-		if(firstName!=null && !firstName.equals("") && lastName!=null && !lastName.equals(""))
-		{
-			//!= session.getAttribute("firstName") && lastName != session.getAttribute("lastName")
-			
-			
-			//lastName.equalsIgnoreCase("lastName");
-			
-			
-					
-			if(comparison == true)
+			public Form()
 			{
-				  RequestDispatcher rd = getServletContext().getRequestDispatcher("/Formularz.jsp");
-				  PrintWriter out= response.getWriter();
-				  out.println("<h2><font color=red>Zajestrowales sie juz!!!!</font></h2>");
-				  rd.include(request, response);
+				super();
 			}
-			else if(comparison == false)
+	  
+		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 			{
-				if(Participant.counter < limit)
-				{
-				 	Participant p = new Participant();
-					p.setFirstName(firstName);
-					
-					
+			
+				String firstName = request.getParameter("firstName");
+				String lastName = request.getParameter("lastName");
+				String email = request.getParameter("email");
+				String emailAuthenticate = request.getParameter("emailAuthenticate");
+				String superior = request.getParameter("superior");
+				String info = request.getParameter("info");
+				String text = request.getParameter("text");
+								
+				int limit = 5;
 						
-					response.sendRedirect("Sukces.jsp");
+				HttpSession session = request.getSession();
+				
+				if(email!=null && emailAuthenticate!=null && email.equals(emailAuthenticate))
+					
+				{
+
+					if(session.getAttribute("lastName") != null && session.getAttribute("lastName").equals(lastName) && session.getAttribute("email") != null && session.getAttribute("email").equals(email))
+						
+					{
+						
+						  PrintWriter out= response.getWriter();
+						  out.println("<h2><font color=red>Zajestrowales sie juz!!!!</font></h2>");
+					}
+			
+					else if(firstName!=null && !firstName.equals("") && lastName!=null && !lastName.equals(""))
+						
+					{
+						session.setAttribute("firstName", firstName);
+						session.setAttribute("lastName", lastName);
+						session.setAttribute("email", email);
+							
+							if(Participant.participant < limit)
+								
+							{
+								 	Participant p = new Participant();
+									p.setFirstName(firstName);
+									p.setLastName(lastName);
+									p.setEmail(email);
+									p.setEmail1(emailAuthenticate);
+									p.setSuperior(superior);
+									p.setInfo(info);
+									p.setText(text);
+								
+									response.sendRedirect("Sukces.jsp");
+							}
+							
+							else
+								
+							{
+									response.sendRedirect("Limit.jsp");
+							}
+							
+					}
+					
+					else
+						
+					{
+						    RequestDispatcher rd = getServletContext().getRequestDispatcher("/Formularz.jsp");
+						    response.getWriter().println("<h2><font color=red>Podaj imie, nazwisko i email!!!!</font></h2>");
+						    rd.include(request, response);	              
+					}
 					
 				}
+				
 				else
+					
 				{
-					response.sendRedirect("Limit.jsp");
+					RequestDispatcher rd = getServletContext().getRequestDispatcher("/Formularz.jsp");
+				    response.getWriter().println("<h2><font color=red>Adres email nie zgadzaja sie</font></h2>");
+				    rd.include(request, response);
 				}
 				
 			}
-			
-			
-			
-		}	
-		else
-		{
-	         RequestDispatcher rd = getServletContext().getRequestDispatcher("/Formularz.jsp");
-	         response.getWriter().println("<h2><font color=red>Podaj imie, nazwisko i email!!!!</font></h2>");
-	         rd.include(request, response);	              
-	    }
-			
-		
+	
+		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+			{
+				
+			}
 	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	{
-		
-	}
-}
