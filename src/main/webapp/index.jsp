@@ -5,14 +5,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Demo application</title>
+        <title>JAVA 4 US!</title>
     </head>
     <body>
-        <h2>Simple demo application with Java EE 6 Servlet (3.0) and JSP</h2>
-        <p><a href="hello">See greetings from servlet</a></p>
-        <p><a href="form">Fill a form</a></p>       
-        <p><a href="getPersonData.jsp">Fill a Person form</a></p>
- 		<p><a href="Formularz.jsp">Formularz konferencja</a></p>
+        <h1>Konferencja JAVA 4 US!</h1>
+ 		<p><a href="Formularz.jsp">Rejestracja</a></p>
         
     </body>
 </html>

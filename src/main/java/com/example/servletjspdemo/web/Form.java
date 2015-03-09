@@ -46,9 +46,7 @@ public class Form extends HttpServlet
 					if(session.getAttribute("lastName") != null && session.getAttribute("lastName").equals(lastName) && session.getAttribute("email") != null && session.getAttribute("email").equals(email))
 						
 					{
-						
-						  PrintWriter out= response.getWriter();
-						  out.println("<h2><font color=red>Zajestrowales sie juz!!!!</font></h2>");
+						  response.sendRedirect("DoubleRegistered.jsp");
 					}
 			
 					else if(firstName!=null && !firstName.equals("") && lastName!=null && !lastName.equals(""))
@@ -70,13 +68,13 @@ public class Form extends HttpServlet
 									p.setInfo(info);
 									p.setText(text);
 								
-									response.sendRedirect("Sukces.jsp");
+									response.sendRedirect("Registered.jsp");
 							}
 							
 							else
 								
 							{
-									response.sendRedirect("Limit.jsp");
+									response.sendRedirect("NoRegistered.jsp");
 							}
 							
 					}
@@ -84,9 +82,7 @@ public class Form extends HttpServlet
 					else
 						
 					{
-						    RequestDispatcher rd = getServletContext().getRequestDispatcher("/Formularz.jsp");
-						    response.getWriter().println("<h2><font color=red>Podaj imie, nazwisko i email!!!!</font></h2>");
-						    rd.include(request, response);	              
+							response.sendRedirect("NoData.jsp");
 					}
 					
 				}
@@ -94,9 +90,7 @@ public class Form extends HttpServlet
 				else
 					
 				{
-					RequestDispatcher rd = getServletContext().getRequestDispatcher("/Formularz.jsp");
-				    response.getWriter().println("<h2><font color=red>Adres email nie zgadzaja sie</font></h2>");
-				    rd.include(request, response);
+					response.sendRedirect("Mistake.jsp");
 				}
 				
 			}
