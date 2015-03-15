@@ -7,14 +7,9 @@
 <title>JAVA 4 US!</title>
 </head>
 <body>
-
 <h1>Witaj</h1><br/>
-
 <h2>Nie udana próba rejestracji.<br/> Musisz poprawić adres email.</h2><br/>
-
 <h3>JAVA 4 US!</h3><br/>
-
 <p><a href="Formularz.jsp">Powrót do Rejestracji</a></p> 
-
 </body>
 </html>
