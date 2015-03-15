@@ -8,19 +8,26 @@
 </head>
 <body>
 
-<h1>Zgloszenie na konferencje</h1>
+<h1>Rejestracja na Java 4 US !</h1>
 
 <form action="Form">
 <table>
+
 <tr><td>Imie:</td><td><input type="text" name ="firstName"/></td></tr>
+
 <tr><td>Nazwisko:</td><td><input type="text" name ="lastName"/></td></tr>
-<tr><td>Email:</td><td><input type="email" name="email"/></td></tr>
-<tr><td>Potwierdz email:</td><td><input type="email" name="emailAuthenticate"/></td></tr>
+
+<tr><td>Email:</td><td><input type="text" name="email"/></td></tr>
+
+<tr><td>Wpisz ponownie email:</td><td><input type="text" name="emailAuthenticate"/></td></tr>
+
 <tr><td>Nazwa pracodawcy:</td><td><input type="text" name="superior"/></td></tr>
+
 <tr><td>Skad dowiedziales sie o konferencji:</td></tr>
+
 <tr><td></td><td><input name="info" type="radio" value="Ogloszenie w pracy"/> Ogloszenie w pracy</td></tr>
 <tr><td></td><td><input name="info" type="radio" value="Ogloszenie na uczelni"/> Ogloszenie na uczelni</td></tr>
-<tr><td></td><td><input name="info" type="radio" value="Facbook"/> Facbook</td></tr>
+<tr><td></td><td><input name="info" type="radio" value="Facebook"/> Facebook</td></tr>
 <tr><td></td><td><input name="info" type="radio" value="Znajomi"/> Znajomi</td></tr>
 <tr><td></td><td><input name="info" type="radio" value="Inne(Jakie?)" onclick="this.form.elements['info'].disabled = !this.checked"/> Inne(Jakie?)</td><td><input type="text" name="info" disabled="disabled"/></td></tr>
 <tr><td>Czym sie zajmujesz:</td><td></td></tr>
