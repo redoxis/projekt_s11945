@@ -10,7 +10,7 @@
 
 <h1>Witaj</h1><br/>
 
-<h2>Dziekujemy za próbe rejestracji.<br/> Niestety nie ma już miejsc.</h2><br/>
+<h2>Bardzo dziekujemy za zainteresowanie sie konferencja.<br/> Niestety nie ma już miejsc. Zapraszamy ponownie za rok</h2><br/>
 
 <h3>JAVA 4 US!</h3><br/>
 

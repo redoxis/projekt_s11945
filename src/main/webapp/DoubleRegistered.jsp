@@ -7,7 +7,6 @@
 <title>JAVA 4 US!</title>
 </head>
 <body>
-
 <h1>Witaj</h1><br/>
 
 <h2>Nie udana próba rejestracji.<br/> Zarejestrowales się już wcześniej.</h2><br/>

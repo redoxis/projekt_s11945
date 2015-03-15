@@ -26,8 +26,7 @@ public class Form extends HttpServlet
 	  
 			
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-			{
-			
+			{			
 				String firstName = request.getParameter("firstName");
 				String lastName = request.getParameter("lastName");
 				String email = request.getParameter("email");

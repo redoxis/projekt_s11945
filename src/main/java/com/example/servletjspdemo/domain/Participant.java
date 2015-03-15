@@ -20,8 +20,7 @@ public class Participant
 		Participant.list[participant] = this;
 		Participant.participant++;
 	}
-	
-	
+		
 		
 	public String getFirstName() 
 	{
